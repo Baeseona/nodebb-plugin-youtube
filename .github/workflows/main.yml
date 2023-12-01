@@ -9,14 +9,13 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Clone latest source for Youtube Plugin
-        run:
+        run: |
           cd /home/ubuntu/nodebb/node_modules
           rm -rf nodebb-plugin-youtube
           git clone https://github.com/Baeseona/nodebb-plugin-youtube.git
 
-
       - name: Install plugin and restart NodeBB
-        run:
+        run: |
           cd /home/ubuntu/nodebb
           ./nodebb stop
-            npm install nodebb-plugin-youtube
+          npm install nodebb-plugin-youtube
